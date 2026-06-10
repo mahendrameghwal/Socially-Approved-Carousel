@@ -1,0 +1,43 @@
+{
+    "name": "community-app",
+    "version": "1.0.0",
+    "type": "commonjs",
+    "description": "Community App API for TGW",
+    "main": "src/server.ts",
+    "scripts": {
+        "start": "node dist/server.js",
+        "build": "tsc",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon src/server.ts"
+    },
+    "dependencies": {
+        "axios": "^1.7.9",
+        "bcrypt": "^5.1.1",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.22.2",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^9.7.0",
+        "morgan": "^1.10.0"
+    },
+    "keywords": [
+        "app",
+        "api",
+        "tgw",
+        "nodejs"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/bcrypt": "^5.0.2",
+        "@types/cookie-parser": "^1.4.7",
+        "@types/cors": "^2.8.19",
+        "@types/express": "^5.0.6",
+        "@types/morgan": "^1.9.9",
+        "@types/node": "^22.19.20",
+        "nodemon": "^3.1.14",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.7.2"
+    }
+}
