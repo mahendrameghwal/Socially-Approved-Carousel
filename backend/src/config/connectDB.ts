@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-
 const connectDB = async () => {
 const MongoURL: string |undefined =  process.env.MONGO_URI!;
 console.log(MongoURL) 
