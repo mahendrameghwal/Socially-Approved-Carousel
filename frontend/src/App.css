@@ -1,0 +1,22 @@
+/* App.css — component-level overrides only.
+   All global tokens and animations live in index.css */
+
+/* Lucide icon alignment fix */
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Tailwind line-clamp utility (v4 compatibility) */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Animate spin on Loader2 icon */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

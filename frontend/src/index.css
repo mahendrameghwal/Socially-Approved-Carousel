@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #6C63FF;
+  --color-brand-dark: #5A52D5;
+  --color-surface: #e2e1df;
+  --color-card: #ffffff;
+  --color-card-hover: #f7f6f4;
+  --color-muted: #d3d2cf;
+  --color-border: #c9c8c5;
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-text-muted: #666666;
+  --color-like: #FF4D6D;
+  --color-share: #4DBBFF;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-muted);
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand);
+  }
+}
+
+/* ── Shimmer animation for skeleton ── */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-card) 25%,
+    var(--color-muted) 50%,
+    var(--color-card) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+/* ── Spin animation ── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Progress bar fill ── */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.7; }
+}
+
+/* ── Fade in ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.15s ease-out forwards;
+}
+
+/* ── Scale in for modal ── */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.scale-in {
+  animation: scaleIn 0.15s ease-out forwards;
+}
+
+/* ── Slide animations ── */
+@keyframes slideLeft {
+  from { transform: translateX(40px); opacity: 0.8; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-40px); opacity: 0.8; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-left-in {
+  animation: slideLeft 0.22s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.slide-right-in {
+  animation: slideRight 0.22s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Hide scrollbars for carousel scroll containers */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
